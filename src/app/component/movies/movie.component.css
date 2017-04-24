@@ -1,0 +1,23 @@
+
+.add-movies-form.text-center {
+    width: 77%;
+    margin: 0 auto;
+}
+
+.movie-list {
+    width: 77%;
+    margin: 0 auto;
+}
+
+.btns input {
+    margin-right: 5px;
+    margin-bottom: 3px;
+}
+
+.col-md-1 {
+    width: 67.333333%;
+}
+
+table {
+    width: 100%;
+}

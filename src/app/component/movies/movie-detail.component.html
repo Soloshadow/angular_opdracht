@@ -1,0 +1,80 @@
+<h3>Movie Detail</h3>
+
+
+    <div class = "movieInformationContainer">
+    <div class = "movieTitle">
+        <h2>Movie: {{ title }}</h2>
+        <hr>
+    </div>
+
+    <div class = "movieDate">
+        <h4>Release year: {{ date }}</h4>
+        <hr>
+    </div>
+
+    <div class = "movieGenre">
+        <h5>Genre(s): {{ genre }}</h5>
+        <hr>
+    </div>
+
+    <div class = "movieDirector">
+        <h5>Directed by: {{ director }}</h5>
+        <hr>
+    </div>
+
+    <div class = "movieSummary">
+        <h5>Description: {{ summary }}</h5>
+        <hr>
+    </div>
+
+</div>
+
+    <h1>Editing: {{ title }}</h1>
+
+    <div class = "cont">
+        <div class="form-group">
+            <input [(ngModel)] = "title" type="text" class="form-control" id="title" value = "{{ title }}">
+        </div>
+        <div class="form-group">
+            <input [(ngModel)] = "date" type="text" class="form-control" id="date" value = "{{ date }}">
+        </div>
+        <div class="form-group">
+            <input [(ngModel)] = "genre" type="text" class="form-control" id="genre" value = "{{ genre }}">
+        </div>
+        <div class="form-group">
+            <input [(ngModel)] = "director" type="text" class="form-control" id="director" value = "{{ director }}">
+        </div>
+        <div class="form-group">
+            <input [(ngModel)] = "summary" type="text" class="form-control" id="summary" value = "{{ summary }}">
+        </div>
+
+        <div class = "form-group">
+            <input (click) = "editMovie()" class = "btn btn-default" type="submit" value = "Finish">
+        </div>
+    </div>
+
+<!--
+    <h3>Movie Detail</h3>
+
+    <div *ngIf="movie">
+        <ul>
+            <li><span [class.hidden]="movie.isEditMode">{{movie.title}}</span></li>
+            <li><p [class.hidden]="movie.isEditMode">{{movie.date}}</p></li>
+            <li><b [class.hidden]="movie.isEditMode">{{movie.director}}</b></li>
+        </ul>
+
+
+        <input type="text" [class.hidden]="!movie.isEditMode" [value]="movie.title" autofocus #movieTitle>
+        <input type="text" [class.hidden]="!movie.isEditMode" [value]="movie.date" autofocus #movieDate>
+        <input type="text" [class.hidden]="!movie.isEditMode" [value]="movie.genre" autofocus #movieGenre>
+        <input type="text" [class.hidden]="!movie.isEditMode" [value]="movie.director" autofocus #movieDirector>
+        <input type="text" [class.hidden]="!movie.isEditMode" [value]="movie.summary" autofocus #movieSummary>
+
+        <input type="button" [class.hidden]="!movie.isEditMode" value="Cancel" (click)="setEditState(movie,false)"
+               class="btn btn-warning">
+        <input type="button" [class.hidden]="!movie.isEditMode" value="update"
+               (click)="updateMovie($event,movieTitle,movieDate,movieGenre,movieDirector, movieSummary,movie)"
+               class="btn btn-warning">
+        <input (click)="setEditState(movie,true)" type="button"
+               class="btn btn-default" value="Edit" [class.hidden]="movie.isEditMode">
+    </div>-->

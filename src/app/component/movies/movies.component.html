@@ -1,0 +1,32 @@
+<div class="add-movies-form text-center">
+    <h1>Add movies</h1>
+    <div class="form-group">
+        <input type="text" class="form-control input-lg" placeholder=" title" autofocus #movieTitle>
+        <input type="text" class="form-control input-lg" placeholder=" date" autofocus #movieDate>
+        <input type="text" class="form-control input-lg" placeholder=" genre" autofocus #movieGenre>
+        <input type="text" class="form-control input-lg" placeholder=" director" autofocus #movieDirector>
+        <input type="text" class="form-control input-lg" placeholder=" summary" autofocus #movieSummary>
+        <br>
+        <button (click)="addMovie($event,movieTitle,movieDate,movieGenre, movieDirector, movieSummary)" class="btn btn-primary btn-block">Create</button>
+    </div>
+</div>
+<div class="movie-list">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Text</th>
+            <th>Details</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tr *ngFor="let movie of movies">
+            <td>{{movie._id}}</td>
+            <td>{{movie.title}}</td>
+            <td><input type="button" [routerLink]="['/movie-details', movie._id]" class="btn btn-default"
+                       value="Details"></td>
+            <td><input (click)="deleteMovie(movie)" type="button" class="btn btn-danger" value="Delete"></td>
+        </tr>
+    </table>
+</div>
+
